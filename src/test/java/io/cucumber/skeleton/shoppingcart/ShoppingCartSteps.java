@@ -51,11 +51,9 @@ public class ShoppingCartSteps {
     @And("verify product in the shopping cart")
     public void verifyProductInTheShoppingCart() throws InterruptedException {
         Thread.sleep(2000);
-
         assertThat(driver.findElement(By.className("mb-2")).getText()).isEqualTo("Finalizar compra");
 
     }
-
 
     @And("user is on the shopping cart page")
     public void userIsOnTheShoppingCartPage() throws InterruptedException {
@@ -65,8 +63,13 @@ public class ShoppingCartSteps {
         assertThat(driver.getCurrentUrl()).contains("carrito");
     }
 
+    @And("user wants to buy two units of the product")
+    public void userWantsTwoUnits() {
+            driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[2]/div/div[2]/div/div[2]/div/span[3]/button[1]")).click();
+    }
+
     @When("user press delete button")
-    public void userPressDeleteButton() {
+    public void userPressDeleteButton()  {
         driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[2]/div/div[2]/div/div[4]/div/a/i")).click();
     }
 
@@ -77,7 +80,6 @@ public class ShoppingCartSteps {
         assertThat(driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/div")).getText()).isEqualTo("No hay más artículos en su carrito");
     }
 
-
     @When("user press end buy")
     public void userPressEndBuy() {
         driver.findElement(By.className("mb-2")).click();
@@ -86,5 +88,10 @@ public class ShoppingCartSteps {
     @Then("user is redirected to payment process")
     public void userIsRedirectedToPaymentProcess() {
         assertThat(driver.getCurrentUrl()).contains("pedido");
+    }
+
+    @Then("user has many units")
+    public void userHasManyUnits() {
+        assertThat(driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[2]/div/div[2]/div/div[2]/div/input")).getAttribute("value")).contains("2");
     }
 }
