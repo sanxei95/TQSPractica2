@@ -29,7 +29,6 @@ public class LoginSteps {
 
     @Given("user is on login page")
     public void userIsOnLoginPage() {
-        System.out.println("Inside Step - browser is open");
         driver.get("https://www.neobyte.es/inicio-sesion?back=my-account");
         String tittle = driver.getTitle();
 
@@ -38,7 +37,6 @@ public class LoginSteps {
 
     @When("^user enters (.*) and (.*)$")
     public void userEntersUsernameAndPassword(String username, String password) {
-        System.out.println("Inside Step - user enters user name and password");
 
         driver.findElement(By.name("email")).sendKeys(username);
         driver.findElement(By.name("password")).sendKeys(password);
@@ -46,7 +44,6 @@ public class LoginSteps {
 
     @And("user clicks on login")
     public void userClicksOnLogin() throws InterruptedException {
-        System.out.println("Inside Step - user click on login");
 
         driver.findElement(By.xpath("//*[@id=\"submit-login\"]")).click();
         Thread.sleep(2);
@@ -55,7 +52,6 @@ public class LoginSteps {
 
     @Then("user is navigated to the home page")
     public void userIsNavigatedToTheHomePage() {
-        System.out.println("Inside Step - user is navigated to the home page");
 
         driver.findElement(By.xpath("//*[@id=\"identity-link\"]")).click();
 

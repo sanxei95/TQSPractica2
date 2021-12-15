@@ -42,7 +42,6 @@ public class ShoppingCartSteps {
 
     @And("clicks on first product")
     public void clicksOnFirstProduct() throws InterruptedException {
-
         Thread.sleep(2000);
 
         driver.findElement(By.className("add-to-cart")).click();

@@ -32,8 +32,6 @@ public class RegisterSteps {
 
     @Given("user is on the register site")
     public void userIsOnTheRegisterSite() {
-
-        System.out.println("Inside Step - browser is open");
         driver.get("https://www.neobyte.es/inicio-sesion?create_account=1");
 
         WebElement we = driver.findElement(By.xpath("/html/body/main/section/div[2]/div/section/header/h1/span"));

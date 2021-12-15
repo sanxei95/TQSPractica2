@@ -4,7 +4,6 @@ Feature: edit user functionality
     Given user is going to log in
     And user logs with username and password
     And user logs in
-
     And user is on edit profile page
     When user changes <name>, <lastname>, <email>, <birthdate> and <password>
     And user decides he is a Sr.
@@ -19,7 +18,6 @@ Feature: edit user functionality
     Given user is going to log in
     And user logs with username and password
     And user logs in
-
     And user is on edit profile page
     When user changes <name>, <lastname>, <email>, <birthdate> and <password>
     And user decides she is a Sra.
@@ -34,7 +32,6 @@ Feature: edit user functionality
     Given user is going to log in
     And user logs with username and password
     And user logs in
-
     And user is on edit profile page
     When user changes <name>, <lastname>, <email>, <birthdate> and <password>
     And user decides he is a Sr.
@@ -49,7 +46,6 @@ Feature: edit user functionality
     Given user is going to log in
     And user logs with username and password
     And user logs in
-
     And user is on edit profile page
     When user changes <name>, <lastname>, <email>, <birthdate> and <password>
     And user decides he is a Sr.
@@ -64,7 +60,6 @@ Feature: edit user functionality
     Given user is going to log in
     And user logs with username and password
     And user logs in
-
     And user is on edit profile page
     When user changes <name>, <lastname>, <email>, <birthdate> and <password>
     And user decides he is a Sr.
